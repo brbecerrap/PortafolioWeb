@@ -2,7 +2,6 @@ export interface ContactInfo {
   email: string;
   phone: string;
   linkedin: string;
-  portfolio: string;
   location: string;
 }
 
@@ -11,7 +10,6 @@ export interface Profile {
   title: string;
   subtitle: string;
   summary: string;
-  photo: string;
   contact: ContactInfo;
 }
 
@@ -33,7 +31,6 @@ export interface Project {
   description: string;
   technologies: string[];
   highlights: string[];
-  image?: string;
   link?: string;
   repository?: string;
 }

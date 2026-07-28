@@ -10,8 +10,11 @@ export default function Header() {
 
   return (
     <header 
-      className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm shadow-sm"
-      style={{ backgroundColor: 'color-mix(in srgb, var(--color-surface) 90%, transparent)' }}
+      className="fixed top-0 left-0 right-0 z-50 border-b"
+      style={{ 
+        backgroundColor: 'var(--color-surface)',
+        borderColor: 'var(--color-border)'
+      }}
     >
       <div className="container-custom">
         <div className="flex items-center justify-between h-16">
@@ -21,7 +24,7 @@ export default function Header() {
             className="text-xl font-bold transition-colors"
             style={{ color: 'var(--color-text)' }}
           >
-            {profile.name.split(' ').slice(0, 2).join(' ')}
+            {profile.name}
           </a>
           
           {/* Navigation and Theme Toggle */}

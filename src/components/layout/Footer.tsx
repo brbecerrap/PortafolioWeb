@@ -4,7 +4,13 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="py-8" style={{ backgroundColor: 'var(--color-surface)' }}>
+    <footer 
+      className="py-8 border-t" 
+      style={{ 
+        backgroundColor: 'var(--color-surface)',
+        borderColor: 'var(--color-border)'
+      }}
+    >
       <div className="container-custom">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="text-center md:text-left">
@@ -21,21 +27,11 @@ export default function Footer() {
               href={profile.contact.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="transition-colors"
+              className="transition-colors hover:underline"
               style={{ color: 'var(--color-text-muted)' }}
               aria-label="LinkedIn"
             >
               LinkedIn
-            </a>
-            <a
-              href={profile.contact.portfolio}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition-colors"
-              style={{ color: 'var(--color-text-muted)' }}
-              aria-label="Portafolio"
-            >
-              Portafolio
             </a>
           </div>
         </div>

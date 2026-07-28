@@ -11,8 +11,7 @@ export const projects: Project[] = [
       "Integración con plataforma web de administración",
       "Generación automática de reportes para seguimiento",
       "Análisis de información y datos"
-    ],
-    image: "/images/projects/whatsapp-bot.jpg"
+    ]
   },
   {
     id: "power-platform",
@@ -24,7 +23,6 @@ export const projects: Project[] = [
       "Automatización de flujos con Power Automate",
       "Integración y administración con Dataverse",
       "Mejora de eficiencia operativa"
-    ],
-    image: "/images/projects/power-platform.jpg"
+    ]
   }
 ];

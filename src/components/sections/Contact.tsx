@@ -1,5 +1,5 @@
 import { profile } from '../../data/profile';
-import { Mail, Phone, Link2, ExternalLink, MapPin } from 'lucide-react';
+import { Mail, Phone, Link2, MapPin } from 'lucide-react';
 
 export default function Contact() {
   return (
@@ -14,36 +14,36 @@ export default function Contact() {
             ¿Interesado en trabajar juntos? No dudes en contactarme.
           </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Email */}
             <a
               href={`mailto:${profile.contact.email}`}
-              className="flex items-center gap-4 p-4 rounded-lg transition-colors"
+              className="flex flex-col items-center gap-3 p-6 rounded-xl transition-all hover:scale-105 text-center"
               style={{ backgroundColor: 'var(--color-surface)' }}
               aria-label="Enviar email"
             >
-              <div className="p-3 rounded-lg" style={{ backgroundColor: 'var(--color-primary)', color: 'white' }}>
+              <div className="p-4 rounded-xl" style={{ backgroundColor: 'var(--color-primary)', color: 'white' }}>
                 <Mail className="w-6 h-6" />
               </div>
               <div>
-                <p className="text-sm" style={{ color: 'var(--color-text-muted)' }}>Email</p>
-                <p className="font-medium" style={{ color: 'var(--color-text)' }}>{profile.contact.email}</p>
+                <p className="text-sm font-medium mb-1" style={{ color: 'var(--color-text)' }}>Email</p>
+                <p className="text-xs" style={{ color: 'var(--color-text-muted)' }}>{profile.contact.email}</p>
               </div>
             </a>
             
             {/* Phone */}
             <a
               href={`tel:${profile.contact.phone}`}
-              className="flex items-center gap-4 p-4 rounded-lg transition-colors"
+              className="flex flex-col items-center gap-3 p-6 rounded-xl transition-all hover:scale-105 text-center"
               style={{ backgroundColor: 'var(--color-surface)' }}
               aria-label="Llamar por teléfono"
             >
-              <div className="p-3 rounded-lg" style={{ backgroundColor: '#059669', color: 'white' }}>
+              <div className="p-4 rounded-xl" style={{ backgroundColor: '#059669', color: 'white' }}>
                 <Phone className="w-6 h-6" />
               </div>
               <div>
-                <p className="text-sm" style={{ color: 'var(--color-text-muted)' }}>Teléfono</p>
-                <p className="font-medium" style={{ color: 'var(--color-text)' }}>{profile.contact.phone}</p>
+                <p className="text-sm font-medium mb-1" style={{ color: 'var(--color-text)' }}>Teléfono</p>
+                <p className="text-xs" style={{ color: 'var(--color-text-muted)' }}>{profile.contact.phone}</p>
               </div>
             </a>
             
@@ -52,34 +52,16 @@ export default function Contact() {
               href={profile.contact.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-4 p-4 rounded-lg transition-colors"
+              className="flex flex-col items-center gap-3 p-6 rounded-xl transition-all hover:scale-105 text-center"
               style={{ backgroundColor: 'var(--color-surface)' }}
               aria-label="LinkedIn"
             >
-              <div className="p-3 rounded-lg" style={{ backgroundColor: '#1d4ed8', color: 'white' }}>
+              <div className="p-4 rounded-xl" style={{ backgroundColor: '#1d4ed8', color: 'white' }}>
                 <Link2 className="w-6 h-6" />
               </div>
               <div>
-                <p className="text-sm" style={{ color: 'var(--color-text-muted)' }}>LinkedIn</p>
-                <p className="font-medium" style={{ color: 'var(--color-text)' }}>Bryan Becerra</p>
-              </div>
-            </a>
-            
-            {/* Portfolio */}
-            <a
-              href={profile.contact.portfolio}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-4 p-4 rounded-lg transition-colors"
-              style={{ backgroundColor: 'var(--color-surface)' }}
-              aria-label="Portafolio web"
-            >
-              <div className="p-3 rounded-lg" style={{ backgroundColor: '#7c3aed', color: 'white' }}>
-                <ExternalLink className="w-6 h-6" />
-              </div>
-              <div>
-                <p className="text-sm" style={{ color: 'var(--color-text-muted)' }}>Portafolio</p>
-                <p className="font-medium" style={{ color: 'var(--color-text)' }}>bbpstudio.com</p>
+                <p className="text-sm font-medium mb-1" style={{ color: 'var(--color-text)' }}>LinkedIn</p>
+                <p className="text-xs" style={{ color: 'var(--color-text-muted)' }}>Bryan Becerra</p>
               </div>
             </a>
           </div>
