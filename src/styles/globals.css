@@ -1,0 +1,157 @@
+@import "tailwindcss";
+
+/* Custom base styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply antialiased;
+  }
+}
+
+/* Light theme (default) */
+:root {
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+  --color-secondary: #6b7280;
+  --color-bg: #f9fafb;
+  --color-surface: #ffffff;
+  --color-surface-hover: #f3f4f6;
+  --color-text: #111827;
+  --color-text-secondary: #6b7280;
+  --color-text-muted: #9ca3af;
+  --color-border: #e5e7eb;
+  --color-border-hover: #d1d5db;
+  --color-success: #059669;
+  --color-success-bg: #d1fae5;
+  --color-success-text: #065f46;
+}
+
+/* Dark theme */
+.dark {
+  --color-primary: #60a5fa;
+  --color-primary-hover: #3b82f6;
+  --color-secondary: #9ca3af;
+  --color-bg: #111827;
+  --color-surface: #1f2937;
+  --color-surface-hover: #374151;
+  --color-text: #f9fafb;
+  --color-text-secondary: #d1d5db;
+  --color-text-muted: #9ca3af;
+  --color-border: #374151;
+  --color-border-hover: #4b5563;
+  --color-success: #34d399;
+  --color-success-bg: #064e3b;
+  --color-success-text: #a7f3d0;
+}
+
+/* System preference detection */
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    --color-primary: #60a5fa;
+    --color-primary-hover: #3b82f6;
+    --color-secondary: #9ca3af;
+    --color-bg: #111827;
+    --color-surface: #1f2937;
+    --color-surface-hover: #374151;
+    --color-text: #f9fafb;
+    --color-text-secondary: #d1d5db;
+    --color-text-muted: #9ca3af;
+    --color-border: #374151;
+    --color-border-hover: #4b5563;
+    --color-success: #34d399;
+    --color-success-bg: #064e3b;
+    --color-success-text: #a7f3d0;
+  }
+}
+
+/* Apply theme colors to body */
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Custom component styles */
+@layer components {
+  .section-padding {
+    @apply py-16 px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-custom {
+    @apply max-w-6xl mx-auto;
+  }
+  
+  .theme-surface {
+    background-color: var(--color-surface);
+    transition: background-color 0.2s ease;
+  }
+  
+  .theme-surface-hover:hover {
+    background-color: var(--color-surface-hover);
+  }
+  
+  .theme-text {
+    color: var(--color-text);
+  }
+  
+  .theme-text-secondary {
+    color: var(--color-text-secondary);
+  }
+  
+  .theme-text-muted {
+    color: var(--color-text-muted);
+  }
+  
+  .theme-border {
+    border-color: var(--color-border);
+  }
+  
+  .theme-border-hover:hover {
+    border-color: var(--color-border-hover);
+  }
+}
+
+/* Print stylesheet - always light mode */
+@media print {
+  :root {
+    --color-primary: #2563eb;
+    --color-primary-hover: #1d4ed8;
+    --color-secondary: #6b7280;
+    --color-bg: #ffffff;
+    --color-surface: #ffffff;
+    --color-surface-hover: #f3f4f6;
+    --color-text: #111827;
+    --color-text-secondary: #6b7280;
+    --color-text-muted: #9ca3af;
+    --color-border: #e5e7eb;
+    --color-border-hover: #d1d5db;
+    --color-success: #059669;
+    --color-success-bg: #d1fae5;
+    --color-success-text: #065f46;
+  }
+  
+  body {
+    background-color: #ffffff !important;
+    color: #111827 !important;
+  }
+  
+  * {
+    transition: none !important;
+  }
+}
+
+/* Focus indicators for accessibility */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Smooth transitions for theme switching */
+*, *::before, *::after {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+}
