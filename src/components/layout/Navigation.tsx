@@ -23,7 +23,7 @@ export default function Navigation({ activeSection }: NavigationProps) {
       </button>
 
       {/* Navigation links */}
-      <ul className={`${isOpen ? 'block' : 'hidden'} md:flex md:items-center md:gap-6 absolute md:relative top-full left-0 right-0 md:bg-transparent shadow-md md:shadow-none py-4 md:py-0 px-4 md:px-0`} style={{ backgroundColor: 'var(--color-bg)' }}>
+      <ul className={`${isOpen ? 'block' : 'hidden'} md:flex md:items-center md:gap-6 absolute md:relative top-full left-0 right-0 md:bg-transparent shadow-md md:shadow-none py-4 md:py-0 px-4 md:px-0`}>
         {navigation.map((item) => (
           <li key={item.id}>
             <a

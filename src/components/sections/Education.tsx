@@ -10,17 +10,20 @@ export default function Education() {
   };
 
   return (
-    <section id="education" className="section-padding" style={{ backgroundColor: 'var(--color-surface)' }}>
+    <section id="education" className="section-padding" style={{ backgroundColor: 'var(--color-bg)' }}>
       <div className="container-custom">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12" style={{ color: 'var(--color-text)' }}>
-          Educación y Certificaciones
-        </h2>
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: 'var(--color-text)' }}>
+            Educación y Certificaciones
+          </h2>
+          <p style={{ color: 'var(--color-text-muted)' }}>Formación académica y certificaciones</p>
+        </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {/* Education */}
           <div>
             <h3 className="text-xl font-semibold mb-6 flex items-center gap-2" style={{ color: 'var(--color-text)' }}>
-              <GraduationCap className="w-6 h-6" style={{ color: 'var(--color-primary)' }} />
+              <GraduationCap className="w-5 h-5" style={{ color: 'var(--color-primary)' }} />
               Educación
             </h3>
             
@@ -28,19 +31,18 @@ export default function Education() {
               {education.map((edu) => (
                 <div
                   key={edu.id}
-                  className="p-6 rounded-xl shadow-md"
-                  style={{ backgroundColor: 'var(--color-bg)' }}
+                  className="p-5 rounded-2xl border hover:shadow-md transition-shadow"
+                  style={{ 
+                    backgroundColor: 'var(--color-surface)',
+                    borderColor: 'var(--color-border)'
+                  }}
                 >
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-lg" style={{ backgroundColor: 'var(--color-primary)', color: 'white' }}>
-                      <GraduationCap className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold" style={{ color: 'var(--color-text)' }}>{edu.degree}</h4>
-                      <p style={{ color: 'var(--color-primary)' }}>{edu.institution}</p>
-                      <p className="text-sm" style={{ color: 'var(--color-text-muted)' }}>{edu.location}</p>
-                      <p className="text-sm" style={{ color: 'var(--color-text-muted)' }}>{formatDate(edu.date)}</p>
-                    </div>
+                  <h4 className="font-semibold mb-1" style={{ color: 'var(--color-text)' }}>{edu.degree}</h4>
+                  <p className="text-sm font-medium mb-1" style={{ color: 'var(--color-primary)' }}>{edu.institution}</p>
+                  <div className="flex gap-3 text-xs" style={{ color: 'var(--color-text-muted)' }}>
+                    <span>{edu.location}</span>
+                    <span>•</span>
+                    <span>{formatDate(edu.date)}</span>
                   </div>
                 </div>
               ))}
@@ -50,7 +52,7 @@ export default function Education() {
           {/* Certifications */}
           <div>
             <h3 className="text-xl font-semibold mb-6 flex items-center gap-2" style={{ color: 'var(--color-text)' }}>
-              <Award className="w-6 h-6" style={{ color: '#059669' }} />
+              <Award className="w-5 h-5" style={{ color: 'var(--color-primary)' }} />
               Certificaciones
             </h3>
             
@@ -58,19 +60,15 @@ export default function Education() {
               {certifications.map((cert) => (
                 <div
                   key={cert.id}
-                  className="p-6 rounded-xl shadow-md"
-                  style={{ backgroundColor: 'var(--color-bg)' }}
+                  className="p-5 rounded-2xl border hover:shadow-md transition-shadow"
+                  style={{ 
+                    backgroundColor: 'var(--color-surface)',
+                    borderColor: 'var(--color-border)'
+                  }}
                 >
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-lg" style={{ backgroundColor: '#059669', color: 'white' }}>
-                      <Award className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold" style={{ color: 'var(--color-text)' }}>{cert.name}</h4>
-                      <p style={{ color: '#059669' }}>{cert.issuer}</p>
-                      <p className="text-sm" style={{ color: 'var(--color-text-muted)' }}>{cert.date}</p>
-                    </div>
-                  </div>
+                  <h4 className="font-semibold mb-1" style={{ color: 'var(--color-text)' }}>{cert.name}</h4>
+                  <p className="text-sm font-medium mb-1" style={{ color: 'var(--color-primary)' }}>{cert.issuer}</p>
+                  <p className="text-xs" style={{ color: 'var(--color-text-muted)' }}>{cert.date}</p>
                 </div>
               ))}
             </div>

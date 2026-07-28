@@ -7,7 +7,7 @@ export default function Footer() {
     <footer 
       className="py-8 border-t" 
       style={{ 
-        backgroundColor: 'var(--color-surface)',
+        backgroundColor: 'var(--color-bg)',
         borderColor: 'var(--color-border)'
       }}
     >
@@ -27,8 +27,8 @@ export default function Footer() {
               href={profile.contact.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="transition-colors hover:underline"
-              style={{ color: 'var(--color-text-muted)' }}
+              className="text-sm font-medium transition-colors hover:underline"
+              style={{ color: 'var(--color-primary)' }}
               aria-label="LinkedIn"
             >
               LinkedIn
