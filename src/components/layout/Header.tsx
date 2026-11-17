@@ -9,7 +9,13 @@ export default function Header() {
   const activeSection = useScrollSpy(sectionIds);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50">
+    <header
+      className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md"
+      style={{
+        backgroundColor: 'color-mix(in srgb, var(--color-bg) 82%, transparent)',
+        borderBottom: '1px solid var(--color-border)'
+      }}
+    >
       <div className="container-custom">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}

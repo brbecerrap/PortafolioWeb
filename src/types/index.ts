@@ -25,12 +25,18 @@ export interface SkillCategory {
   skills: Skill[];
 }
 
+export interface ProjectImage {
+  src: string;
+  alt: string;
+}
+
 export interface Project {
   id: string;
   title: string;
   description: string;
   technologies: string[];
   highlights: string[];
+  images?: ProjectImage[];
   link?: string;
   repository?: string;
 }

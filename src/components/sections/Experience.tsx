@@ -1,5 +1,6 @@
 import { experience } from '../../data/experience';
 import { Calendar, MapPin, Briefcase } from 'lucide-react';
+import Reveal from '../ui/Reveal';
 
 export default function Experience() {
   const formatDate = (dateString: string) => {
@@ -11,12 +12,12 @@ export default function Experience() {
   return (
     <section id="experience" className="section-padding" style={{ backgroundColor: 'var(--color-surface)' }}>
       <div className="container-custom">
-        <div className="text-center mb-12">
+        <Reveal className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: 'var(--color-text)' }}>
             Experiencia Profesional
           </h2>
           <p style={{ color: 'var(--color-text-muted)' }}>Mi trayectoria profesional</p>
-        </div>
+        </Reveal>
         
         <div className="relative max-w-4xl mx-auto">
           {/* Timeline line */}

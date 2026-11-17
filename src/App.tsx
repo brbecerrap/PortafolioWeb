@@ -7,6 +7,7 @@ import Projects from './components/sections/Projects'
 import Experience from './components/sections/Experience'
 import Education from './components/sections/Education'
 import Contact from './components/sections/Contact'
+import TaglineReveal from './components/ui/TaglineReveal'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Header />
         <main>
           <Hero />
+          <TaglineReveal text="Construyo aplicaciones que ordenan el trabajo y ahorran horas cada semana." />
           <Skills />
           <Projects />
           <Experience />

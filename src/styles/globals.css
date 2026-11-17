@@ -1,13 +1,41 @@
 @import "tailwindcss";
 
+/* Motion and typography tokens (landing-page-design skill) */
+:root {
+  --ease-base: cubic-bezier(0.22, 1, 0.36, 1);
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --hero-grad-from: #000000;
+  --hero-grad-to: #666666;
+}
+
 /* Custom base styles */
 @layer base {
   html {
     scroll-behavior: smooth;
   }
-  
+
   body {
     @apply antialiased;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  .hero-heading {
+    background-image: linear-gradient(to right, var(--hero-grad-from), var(--hero-grad-to));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  .ease-base {
+    transition-timing-function: var(--ease-base);
   }
 }
 
@@ -33,6 +61,8 @@
 
 /* Dark theme - Supabase inspired */
 .dark {
+  --hero-grad-from: #FFFFFF;
+  --hero-grad-to: #9B9B9B;
   --color-primary: #3ECF8E;
   --color-primary-hover: #5BD9A4;
   --color-primary-dark: #2DB87A;
@@ -54,6 +84,8 @@
 /* System preference detection */
 @media (prefers-color-scheme: dark) {
   :root:not(.light) {
+    --hero-grad-from: #FFFFFF;
+    --hero-grad-to: #9B9B9B;
     --color-primary: #3ECF8E;
     --color-primary-hover: #5BD9A4;
     --color-primary-dark: #2DB87A;
@@ -77,7 +109,7 @@
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition: background-color 300ms var(--ease-base), color 300ms var(--ease-base);
 }
 
 /* Custom component styles */
@@ -160,6 +192,49 @@ body {
 /* Smooth transitions for theme switching */
 *, *::before, *::after {
   transition-property: background-color, border-color, color, fill, stroke;
-  transition-duration: 0.2s;
-  transition-timing-function: ease;
+  transition-duration: 300ms;
+  transition-timing-function: var(--ease-base);
+}
+
+/* Tagline reveal (landing-page-design skill B11) */
+.tagline-word {
+  color: var(--color-text);
+  opacity: 0.3;
+  transition: opacity 500ms var(--ease-base);
+}
+
+.tagline-word.is-active {
+  opacity: 1;
+}
+
+/* Section reveals: rise + fade, once, on the base curve */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition:
+    opacity 700ms var(--ease-base),
+    transform 700ms var(--ease-base);
+}
+
+.reveal.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tagline-word {
+    opacity: 1;
+    transition: none;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  *, *::before, *::after {
+    transition-duration: 0ms !important;
+    animation-duration: 0ms !important;
+  }
 }

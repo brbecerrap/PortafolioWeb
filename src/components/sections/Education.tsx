@@ -1,5 +1,6 @@
 import { education, certifications } from '../../data/education';
 import { GraduationCap, Award } from 'lucide-react';
+import Reveal from '../ui/Reveal';
 
 export default function Education() {
   const formatDate = (dateString: string) => {
@@ -12,12 +13,12 @@ export default function Education() {
   return (
     <section id="education" className="section-padding" style={{ backgroundColor: 'var(--color-bg)' }}>
       <div className="container-custom">
-        <div className="text-center mb-12">
+        <Reveal className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: 'var(--color-text)' }}>
             Educación y Certificaciones
           </h2>
           <p style={{ color: 'var(--color-text-muted)' }}>Formación académica y certificaciones</p>
-        </div>
+        </Reveal>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {/* Education */}

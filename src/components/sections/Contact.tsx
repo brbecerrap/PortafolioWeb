@@ -1,13 +1,16 @@
 import { profile } from '../../data/profile';
 import { Mail, Phone, Link2, MapPin } from 'lucide-react';
+import Reveal from '../ui/Reveal';
 
 export default function Contact() {
   return (
     <section id="contact" className="section-padding" style={{ backgroundColor: 'var(--color-bg)' }}>
       <div className="container-custom">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12" style={{ color: 'var(--color-text)' }}>
-          Contacto
-        </h2>
+        <Reveal>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12" style={{ color: 'var(--color-text)' }}>
+            Contacto
+          </h2>
+        </Reveal>
         
         <div className="max-w-2xl mx-auto">
           <p className="text-center mb-8 text-lg" style={{ color: 'var(--color-text-secondary)' }}>

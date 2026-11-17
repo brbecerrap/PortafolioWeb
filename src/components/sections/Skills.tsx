@@ -1,5 +1,6 @@
 import { skills } from '../../data/skills';
 import { Code, Database, Layout, Users } from 'lucide-react';
+import Reveal from '../ui/Reveal';
 
 const iconMap: Record<string, React.ReactNode> = {
   Code: <Code className="w-6 h-6" />,
@@ -12,12 +13,12 @@ export default function Skills() {
   return (
     <section id="skills" className="section-padding" style={{ backgroundColor: 'var(--color-bg)' }}>
       <div className="container-custom">
-        <div className="text-center mb-12">
+        <Reveal className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: 'var(--color-text)' }}>
             Habilidades
           </h2>
           <p style={{ color: 'var(--color-text-muted)' }}>Tecnologías y herramientas que domino</p>
-        </div>
+        </Reveal>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {skills.map((category) => (
